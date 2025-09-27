@@ -1,6 +1,6 @@
 # Terraform state files
 *.tfstate
-*.tfstate.*.backup
+*.tfstate.backup
 .terraform.tfstate.lock.info
 
 # Local Terraform directories
@@ -27,7 +27,8 @@ override.tf.json
 *\_override.tf.json
 
 # Providers lock file (should generally be committed for consistency, but can be ignored in specific scenarios)
-# .terraform.lock.hcl
+.terraform.lock.hcl
 
 # Local executables (if present)
 *.exe
+
