@@ -18,6 +18,3 @@ pipx install flask
 
 # Start a sample Flask app
 python3 app.py
-
-# Sample index.html file to verify Nginx is serving content
-echo "Welcome to Mike's Nginx server!" > /var/www/html/index.html
