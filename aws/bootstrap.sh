@@ -11,6 +11,10 @@ sudo apt-get install -y python3 python3-pip
 
 # Install pipx for isolated Python package management
 sudo apt-get install -y pipx
+pipx ensurepath
+
+# Activate pipx environment
+source /home/ubuntu/.local/share/pipx/venvs/flask/bin/activate
 
 # Install Flask using pipx
 pipx install flask
