@@ -8,10 +8,12 @@ resource "aws_vpc" "mike-vpc" {
   }
 }
 
-
 resource "aws_instance" "mike-instance1" {
-  ami           = "ami-06a974f9b8a97ecf2"
+  ami           = "ami-03aa99ddf5498ceb9" # Ubuntu Server 20.04, AMD64
   instance_type = "t3.micro"
+
+  user_data = file("bootstrap.sh")
+
   tags = {
     Name = "web1"
     owner = "mimorgaldevops2024@gmail.com"
