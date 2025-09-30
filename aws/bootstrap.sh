@@ -9,6 +9,12 @@ sudo apt-get install -y nginx
 # Install Python3
 sudo apt-get install -y python3 python3-pip
 
+# Install pipx for isolated Python package management
+sudo apt-get install -y pipx
+
+# Install Flask using pipx
+pipx install flask
+
 # Enable and start Nginx
 sudo systemctl enable nginx
 sudo systemctl start nginx
