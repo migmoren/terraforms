@@ -19,3 +19,8 @@ resource "aws_instance" "mike-instance1" {
     owner = "mimorgaldevops2024@gmail.com"
   }
 }
+
+resource "aws_key_pair" "mike-key" {
+  key_name   = "mike-key"
+  public_key = file("~/.ssh/terraforms.pub")
+}
