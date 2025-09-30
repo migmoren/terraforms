@@ -14,7 +14,7 @@ sudo systemctl enable nginx
 sudo systemctl start nginx
 
 # Sample index.html file to verify Nginx is serving content
-echo "Welcome to my Nginx server!" > /var/www/html/index.html
+echo "Welcome to Mike's Nginx server!" > /var/www/html/index.html
 
 # Print installed versions
 nginx -v
