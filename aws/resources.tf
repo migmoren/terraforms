@@ -17,6 +17,11 @@ resource "aws_instance" "mike-instance1" {
   associate_public_ip_address = true
   user_data                   = file("bootstrap.sh")
 
+  provisioner "file" {
+    source = "src/app.py"
+    destination = "/home/ubuntu/app.py"    
+  }
+
   tags = {
     Name  = "web1"
     owner = "mimorgaldevops2024@gmail.com"
