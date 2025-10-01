@@ -4,7 +4,6 @@ resource "aws_vpc" "mike-vpc" {
   enable_dns_support   = true
   tags = {
     Name  = "mike-vpc"
-    owner = "mimorgaldevops2024@gmail.com"
   }
 }
 
@@ -17,14 +16,8 @@ resource "aws_instance" "mike-instance1" {
   associate_public_ip_address = true
   user_data                   = file("bootstrap.sh")
 
-  provisioner "file" {
-    source = "src/app.py"
-    destination = "/home/ubuntu/app.py"    
-  }
-
   tags = {
     Name  = "web1"
-    owner = "mimorgaldevops2024@gmail.com"
   }
 }
 
@@ -46,8 +39,8 @@ resource "aws_security_group" "mike-sg" {
   }
 
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = 8080
+    to_port     = 8080
     protocol    = "tcp"
     cidr_blocks = ["187.190.197.43/32"] # TP IP
   }
@@ -61,7 +54,6 @@ resource "aws_security_group" "mike-sg" {
 
   tags = {
     Name  = "mike-sg"
-    owner = "mimorgaldevops2024@gmail.com"
   }
 }
 
@@ -72,7 +64,6 @@ resource "aws_subnet" "mike-subnet" {
 
   tags = {
     Name  = "mike-subnet"
-    owner = "mimorgaldevops2024@gmail.com"
   }
 }
 
@@ -81,7 +72,6 @@ resource "aws_internet_gateway" "mike-igw" {
 
   tags = {
     Name  = "mike-igw"
-    owner = "mimorgaldevops2024@gmail.com"
   }
 }
 
@@ -94,7 +84,6 @@ resource "aws_route_table" "mike-rt" {
   }
   tags = {
     Name  = "mike-rt"
-    owner = "mimorgaldevops2024@gmail.com"
   }
 }
 
@@ -102,5 +91,3 @@ resource "aws_route_table_association" "mike-rt-assoc" {
   subnet_id      = aws_subnet.mike-subnet.id
   route_table_id = aws_route_table.mike-rt.id
 }
-
-
